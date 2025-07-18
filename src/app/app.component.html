@@ -1,0 +1,19 @@
+<app-splash-screen></app-splash-screen>
+<app-sidebar></app-sidebar>
+
+<header class="header-bar">
+  <div class="nav-controls">
+    <!-- Ay/Güneş Geçişli Switch -->
+    <label class="theme-switch">
+      <input type="checkbox" [checked]="isDarkMode()" (change)="toggleDarkMode($event)" />
+      <span class="slider">
+        <span class="icon moon">🌙</span>
+        <span class="icon sun">☀️</span>
+      </span>
+    </label>
+  </div>
+</header>
+
+<div class="main-content" [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" class="note-form">
+  <label>
+    Başlık
+    <input type="text" [(ngModel)]="note.title" name="title" required />
+  </label>
+
+  <label>
+    İçerik
+    <textarea [(ngModel)]="note.content" name="content" rows="5" required></textarea>
+  </label>
+
+  <label>
+    Kategori
+    <input type="text" [(ngModel)]="note.category" name="category" />
+  </label>
+
+  <label>
+    Önem
+    <select [(ngModel)]="note.importance" name="importance">
+      <option value="High">Yüksek</option>
+      <option value="Medium">Orta</option>
+      <option value="Low">Düşük</option>
+    </select>
+  </label>
+
+  <label class="checkbox-wrapper">
+    <input type="checkbox" [(ngModel)]="note.favorite" name="favorite" />
+    <span>Favori olarak işaretle</span>
+  </label>
+
+  <button type="submit">Kaydet</button>
+</form>

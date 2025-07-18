@@ -1,0 +1,164 @@
+/* ===== Temel Değişkenler ===== */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #1f1f1f;
+  --card-bg: #ffffff;
+  --input-bg: #fefefe;
+  --button-bg: #e3e3e3;
+  --button-text: #111;
+  --header-bg: linear-gradient(to right, #6a11cb, #2575fc);
+  --badge-bg: #d0d0d0;
+  --badge-text: #333;
+}
+
+body.dark-mode {
+  --bg-color: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+  --text-color: #f5f5f5;
+  --card-bg: #212121;
+  --input-bg: #2a2a2a;
+  --button-bg: #444;
+  --button-text: #fff;
+  --header-bg: linear-gradient(to right, #000000, #434343);
+  --badge-bg: #555;
+  --badge-text: #eee;
+}
+
+/* ===== Genel Stil ===== */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== Formlar ve Butonlar ===== */
+input,
+textarea,
+select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border: none !important;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* ===== Header ===== */
+.header-bar {
+  background: var(--header-bg);
+  padding: 1rem 2rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Filtre Alanları ===== */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+/* ===== Not Kartları ===== */
+.note-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  padding: 1.4rem;
+  margin: 1rem;
+  max-width: 320px;
+  min-height: 160px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.note-card .importance {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.note-card .high {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.note-card .medium {
+  background: #f1c40f;
+  color: #000;
+}
+
+.note-card .low {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.note-card .badge {
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.note-card .note-footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.note-card .actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* ===== Glassmorphism (isteğe bağlı) ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+

@@ -1,0 +1,30 @@
+<div class="encrypted-note-form glass-card">
+  <h2>🔐 Şifreli Not Oluştur</h2>
+
+  <label>Başlık</label>
+  <input type="text" [(ngModel)]="note.title" placeholder="Başlık girin" />
+
+  <label>İçerik</label>
+  <textarea [(ngModel)]="note.content" rows="5" placeholder="Not içeriği"></textarea>
+
+  <label>Kategori</label>
+  <input type="text" [(ngModel)]="note.category" placeholder="Kategori girin" />
+
+  <label>Önem</label>
+  <select [(ngModel)]="note.importance">
+    <option value="Low">Düşük</option>
+    <option value="Medium">Orta</option>
+    <option value="High">Yüksek</option>
+  </select>
+
+  <div class="favorite-toggle">
+  <input type="checkbox" id="fav" [(ngModel)]="note.favorite" />
+  <label for="fav">⭐ Favori olarak işaretle</label>
+</div>
+
+
+  <div class="btn-group">
+    <button class="save-btn" (click)="saveNote()">Kaydet</button>
+    <button class="save-btn cancel" (click)="router.navigate(['/'])">İptal</button>
+  </div>
+</div>

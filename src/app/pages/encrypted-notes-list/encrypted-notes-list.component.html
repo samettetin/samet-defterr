@@ -1,0 +1,7 @@
+<div class="glass-card" *ngFor="let note of allNotes">
+  <h3>🔐 {{ note.title }}</h3>
+  <p>Kategori: {{ note.category }}</p>
+  <p>Önem: {{ note.importance }}</p>
+  <p *ngIf="note.favorite">⭐ Favori</p>
+  <p class="locked">Bu not şifrelenmişti.</p>
+</div>

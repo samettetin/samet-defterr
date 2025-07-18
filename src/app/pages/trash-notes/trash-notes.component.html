@@ -1,0 +1,23 @@
+<!-- src/app/pages/trash-notes/trash-notes.component.html -->
+<div class="trash-container">
+  <h2>🗑️ Çöp Kutusu</h2>
+
+  <div *ngIf="trashedNotes.length === 0" class="empty">
+    Çöp kutusu boş.
+  </div>
+
+  <div class="trash-grid">
+    <div class="note-card" *ngFor="let note of trashedNotes">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+      <div class="meta">
+        <span class="category">📁 {{ note.category || 'Genel' }}</span>
+        <span class="date">🕒 {{ note.date | date:'short' }}</span>
+      </div>
+      <div class="actions">
+        <button (click)="restoreNote(note.id)">♻️ Geri Yükle</button>
+        <button (click)="permanentlyDelete(note.id)">❌ Kalıcı Sil</button>
+      </div>
+    </div>
+  </div>
+</div>

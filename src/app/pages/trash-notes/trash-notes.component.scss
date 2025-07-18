@@ -1,0 +1,76 @@
+.trash-container {
+  padding: 2rem;
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+  }
+
+  .empty {
+    color: gray;
+    font-style: italic;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .trash-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .note-card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    max-width: 280px;
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+    .meta {
+      font-size: 0.8rem;
+      margin: 0.5rem 0;
+      opacity: 0.8;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+
+      button {
+        flex: 1;
+        padding: 0.4rem 0.6rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:first-child {
+        background-color: #00b894;
+        color: #fff;
+
+        &:hover {
+          background-color: #019170;
+        }
+      }
+
+      button:last-child {
+        background-color: #d63031;
+        color: #fff;
+
+        &:hover {
+          background-color: #c0392b;
+        }
+      }
+    }
+  }
+}

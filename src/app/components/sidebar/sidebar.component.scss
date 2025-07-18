@@ -1,0 +1,83 @@
+.sidebar {
+  width: 200px;
+  background: var(--header-bg);
+  color: white;
+  height: 100vh;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 600;
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover,
+  a.active {
+    color: #fdcb6e;
+  }
+}
+
+/* Not Oluştur Butonu */
+.create-note-button {
+  margin-top: 3rem; // 👈 Bu satırla biraz aşağı aldık
+
+  .gradient-btn {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 14px rgba(0, 114, 255, 0.4);
+
+    &:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      box-shadow: 0 6px 16px rgba(0, 114, 255, 0.5);
+    }
+  }
+}
+
+/* Şifreli Notlar Linki */
+
+
+
+
+/* Çöp Kutusu Linki */
+.trash-link {
+  margin-top: auto;
+  padding-bottom: 2rem;
+
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+body.dark-mode .trash-link a {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #eaeaea;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

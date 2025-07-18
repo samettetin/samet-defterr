@@ -1,0 +1,146 @@
+.home-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Filtre bölgesi */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+
+  input, select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  button {
+    background-color: #0984e3;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0652dd;
+    }
+  }
+}
+
+/* Not kartları düzeni */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Not kartı */
+.note-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .note-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+
+    .importance {
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .importance.low {
+      background-color: #00b894;
+      color: #fff;
+    }
+    .importance.medium {
+      background-color: #fdcb6e;
+      color: #000;
+    }
+    .importance.high {
+      background-color: #d63031;
+      color: #fff;
+    }
+
+    .category, .date {
+      color: #666;
+    }
+  }
+
+  .note-actions {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.3rem 0.6rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      background: #eee;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #ccc;
+      }
+    }
+  }
+}
+
+/* Dark mode stilleri */
+body.dark-mode .note-card {
+  background: #1e1e2e;
+  color: #eaeaea;
+
+  p {
+    color: #ccc;
+  }
+
+  .note-meta {
+    .category, .date {
+      color: #aaa;
+    }
+  }
+
+  .note-actions button {
+    background: #333;
+    color: #fff;
+
+    &:hover {
+      background: #555;
+    }
+  }
+}

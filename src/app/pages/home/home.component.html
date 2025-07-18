@@ -1,0 +1,55 @@
+<div class="home-wrapper">
+  <!-- Üst Bar -->
+  <div class="header-bar">
+    <div class="logo">📝 Kişisel Not Defteri</div>
+    <div class="header-controls">
+      
+      <label>
+        
+      </label>
+    </div>
+  </div>
+
+  <!-- Filtre Alanı -->
+  <div class="filter-section">
+    <input
+      type="text"
+      placeholder="🔍 Başlık veya içerik ara..."
+      (input)="onSearchInput($event)"
+    />
+
+    <select (change)="onImportanceChange($event)">
+      <option value="">Önem Derecesi</option>
+      <option value="low">Düşük</option>
+      <option value="medium">Orta</option>
+      <option value="high">Yüksek</option>
+    </select>
+
+    <input
+      type="text"
+      placeholder="📂 Kategori ara..."
+      (input)="onCategoryInput($event)"
+    />
+
+    <button (click)="toggleFavorites()">
+      {{ filterFavoritesOnly ? '⭐ Tüm Notlar' : '⭐ Favoriler' }}
+    </button>
+  </div>
+
+  <!-- Not Kartları -->
+  <div class="notes-grid">
+    <div class="note-card glass-card" *ngFor="let note of filteredNotes">
+      <h3>{{ note.title }}</h3>
+      <p>{{ note.content }}</p>
+      <div class="note-meta">
+        <span class="importance {{ note.importance }}">{{ note.importance }}</span>
+        <span class="category">📁 {{ note.category || 'Genel' }}</span>
+        <span class="date" *ngIf="note.date">🕒 {{ note.date | date:'short' }}</span>
+      </div>
+      <div class="note-actions">
+        <button (click)="onEdit(note.id)">✏️</button>
+        <button (click)="onDelete(note.id)">🗑️</button>
+      </div>
+    </div>
+  </div>
+</div>
